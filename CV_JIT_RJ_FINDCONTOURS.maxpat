@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 5,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 61.0, 79.0, 733.0, 787.0 ],
+		"rect" : [ 407.0, 185.0, 1170.0, 787.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,8 +37,22 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"fontface" : 0,
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-14",
+					"maxclass" : "jit.fpsgui",
+					"mode" : 2,
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 797.5, 403.0, 80.0, 36.0 ]
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-46",
 					"maxclass" : "newobj",
@@ -62,7 +76,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 5,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -95,44 +109,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-17",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 260.0, 94.0, 31.0, 22.0 ],
-									"text" : "float"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-16",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 200.0, 94.0, 31.0, 22.0 ],
-									"text" : "float"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-14",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 51.0, 31.0, 22.0 ],
-									"text" : "float"
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"id" : "obj-13",
 									"maxclass" : "newobj",
@@ -163,7 +140,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 138.0, 220.0, 31.0, 22.0 ],
+									"patching_rect" : [ 94.0, 192.0, 31.0, 22.0 ],
 									"text" : "* -1."
 								}
 
@@ -298,14 +275,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-14", 0 ],
-									"order" : 3,
-									"source" : [ "obj-1", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
 									"order" : 2,
 									"source" : [ "obj-1", 0 ]
@@ -324,14 +293,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-12", 0 ],
 									"order" : 0,
-									"source" : [ "obj-10", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
-									"order" : 2,
 									"source" : [ "obj-10", 0 ]
 								}
 
@@ -426,16 +387,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-16", 0 ],
-									"order" : 0,
-									"source" : [ "obj-9", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-6", 1 ],
-									"order" : 2,
+									"order" : 0,
 									"source" : [ "obj-9", 0 ]
 								}
 
@@ -542,7 +495,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 315.0, 479.0, 228.0, 33.0 ],
+					"patching_rect" : [ 315.0, 479.0, 228.0, 34.0 ],
 					"text" : "ADJUST THESE TO OBTAIN A CLEAN BINARY IMAGE"
 				}
 
@@ -591,7 +544,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 6.0, 7.0, 291.0, 24.0 ],
+					"patching_rect" : [ 6.0, 7.0, 291.0, 25.0 ],
 					"text" : "CV.JIT.RJ.FINDCONTOURS"
 				}
 
@@ -797,7 +750,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 90.5, 313.0, 80.0, 35.0 ]
+					"patching_rect" : [ 90.5, 313.0, 80.0, 36.0 ]
 				}
 
 			}
@@ -831,7 +784,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
-					"outlettype" : [ "jit_matrix", "bang", "" ],
+					"outlettype" : [ "", "bang", "" ],
 					"patching_rect" : [ 6.0, 237.0, 188.0, 22.0 ],
 					"text" : "jit.world @size 1280 720 @fsaa 1"
 				}
@@ -868,11 +821,11 @@
 					"fontsize" : 12.0,
 					"id" : "obj-45",
 					"maxclass" : "jit.fpsgui",
-					"mode" : 3,
+					"mode" : 2,
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 21.0, 763.0, 80.0, 35.0 ]
+					"patching_rect" : [ 21.0, 763.0, 80.0, 36.0 ]
 				}
 
 			}
@@ -1008,6 +961,18 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"attr" : "GL_DIMENSIONS",
+					"id" : "obj-23",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 883.5, 451.5, 243.0, 22.0 ]
+				}
+
+			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
@@ -1062,7 +1027,23 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-29", 0 ],
+					"source" : [ "obj-23", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"order" : 0,
+					"source" : [ "obj-29", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-64", 0 ],
+					"order" : 1,
 					"source" : [ "obj-29", 0 ]
 				}
 
@@ -1289,33 +1270,33 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "cv.jit.rj.findcontours.mxo",
-				"type" : "iLaX"
+				"name" : "cv.jit.rj.findcontours.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "cv.jit.threshold.mxo",
-				"type" : "iLaX"
+				"name" : "cv.jit.threshold.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "jit.==.mxo",
-				"type" : "iLaX"
+				"name" : "jit.==.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "xray.jit.cellcoords.mxo",
-				"type" : "iLaX"
+				"name" : "xray.jit.cellcoords.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "xray.jit.cellvalue.mxo",
-				"type" : "iLaX"
+				"name" : "xray.jit.cellvalue.mxe64",
+				"type" : "mx64"
 			}
  ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "helpfile_label-1",
 				"default" : 				{
+					"textcolor" : [ 0.501961, 0.501961, 0.501961, 1.0 ],
 					"fontsize" : [ 13.0 ],
-					"fontname" : [ "Arial" ],
-					"textcolor" : [ 0.501961, 0.501961, 0.501961, 1.0 ]
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
