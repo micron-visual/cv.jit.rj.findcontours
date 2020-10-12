@@ -18,3 +18,6 @@ Jean Marc Pelletier
 Luca Moroni
 
 Rob Ramirez
+
+![Binary image](IMG_1.png)
+![Extracted contours](IMG_1_PROCESSED.png)
