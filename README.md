@@ -5,13 +5,15 @@ Contours are exported as ordered sequence of points organized in a one dimension
 
 It is possible to simplify the contours.
 
-Author: Rajan Craveri (micron)
+Author: **Rajan Craveri** (micron)
 https://www.patreon.com/posts/cv-jit-rj-win-37043276
 
 Build starting point
 https://jmpelletier.com/building-your-own-cv-jit-externals/
 
-Thanks to:
+:heart: Thanks to all my supporters on Patreon
+
+And thanks for helps, tests and suggestions to:
 * Jean Marc Pelletier
 * Luca Moroni
 * Rob Ramirez
