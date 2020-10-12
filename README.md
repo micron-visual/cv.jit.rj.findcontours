@@ -12,6 +12,9 @@ Build starting point
 https://jmpelletier.com/building-your-own-cv-jit-externals/
 
 Thanks to:
+
 Jean Marc Pelletier
+
 Luca Moroni
+
 Rob Ramirez
