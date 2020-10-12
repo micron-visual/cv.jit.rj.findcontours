@@ -1,6 +1,8 @@
 # cv.jit.rj.findcontours
 Jitter external to find contours into binary images.
+
 Contours are exported as ordered sequence of points organized in a one dimensional 2 planes jitter matrix.
+
 It is possible to simplify the contours.
 
 Author: Rajan Craveri (micron)
