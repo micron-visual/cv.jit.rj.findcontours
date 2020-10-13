@@ -1,17 +1,24 @@
-# cv.jit.rj.findcontours
-Jitter external to find contours into binary images.
+cv.jit.rj.findcontours
+# Jitter external to find contours in binary images
+### Creates custom 2D shapes starting from a binary raster image
+The first outlet outputs a reference image (jit.matrix) rapresents the contours found
 
-Contours are exported as ordered sequence of points organized in a one dimensional 2 planes jitter matrix.
+The second outlet outputs the contours as ordered sequence of points organized in a one dimensional 3 planes jitter matrix.
+* plane 1: contains x coordinates (based on pixels)
+* plane 2: contains y coordinates (based on pixels)
+* plane 3: contains the contour index (often the object finds multiple contours in the binary image)
 
-It is possible to simplify the contours.
+It is also possible to simplify the contours playing with the "epsilon" attribute.
 
-Author: Rajan Craveri (micron)
+Author: **Rajan Craveri** (micron)
 https://www.patreon.com/posts/cv-jit-rj-win-37043276
 
 Build starting point
 https://jmpelletier.com/building-your-own-cv-jit-externals/
 
-Thanks to:
+:heart: Thanks to all my supporters on Patreon
+
+And thanks for helps, tests and suggestions to:
 * Jean Marc Pelletier
 * Luca Moroni
 * Rob Ramirez
