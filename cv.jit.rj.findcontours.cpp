@@ -1,6 +1,6 @@
 /*
 
-TO DO: ADD COPYRIGHTS AND LICENSE
+COPYRIGHTS AND LICENSE
 
 */
 
@@ -23,8 +23,9 @@ using namespace c74::max;
 typedef struct _cv_jit_rj_findcontours {
     t_object ob;
 
-    float   level; // contorni ....
-    float   epsilon;    // approssimazione contorni
+    float   level;      // ? what is this ?
+    float   epsilon;    // contours approximation
+
 } t_cv_jit_rj_findcontours;
 
 void *_cv_jit_rj_findcontours_class;
@@ -41,7 +42,7 @@ t_jit_err cv_jit_rj_findcontours_init(void)
     _cv_jit_rj_findcontours_class = jit_class_new("cv_jit_rj_findcontours",(method)cv_jit_rj_findcontours_new,(method)cv_jit_rj_findcontours_free,sizeof(t_cv_jit_rj_findcontours),0L);
 
     // add mop
-    mop = (t_jit_object*)jit_object_new(_jit_sym_jit_mop,1,2); // args are  num inputs and num outputs
+    mop = (t_jit_object*)jit_object_new(_jit_sym_jit_mop,1,1); // args are  num inputs and num outputs
     jit_class_addadornment(_cv_jit_rj_findcontours_class,mop);
 
     // add methods
@@ -64,12 +65,12 @@ t_jit_err cv_jit_rj_findcontours_matrix_calc(t_cv_jit_rj_findcontours *x, void *
     t_object * in_matrix = (t_object *)jit_object_method(inputs, _jit_sym_getindex, 0);
     t_object * out_matrix = (t_object *)jit_object_method(outputs, _jit_sym_getindex, 0);
 
-    t_jit_matrix_info    out2_minfo;
-    float*                out2_bp;
+    t_jit_matrix_info    out_minfo;
+    float*               out_bp;
     t_jit_matrix_info    in_minfo;
     char*                in_bp;
-    void*                out2_matrix;
-    out2_matrix = jit_object_method(outputs, _jit_sym_getindex, 1);
+    //void*                out2_matrix;
+    //out2_matrix = jit_object_method(outputs, _jit_sym_getindex, 0);
 
     if (x && in_matrix && out_matrix) {
 
@@ -78,8 +79,8 @@ t_jit_err cv_jit_rj_findcontours_matrix_calc(t_cv_jit_rj_findcontours *x, void *
         cvjit::JitterMatrix src(in_matrix);
         cvjit::JitterMatrix dst(out_matrix);
 
-        jit_object_method(out2_matrix, _jit_sym_getinfo, &out2_minfo);
-        jit_object_method(out2_matrix, _jit_sym_getdata, &out2_bp);
+        jit_object_method(out_matrix, _jit_sym_getinfo, &out_minfo);
+        jit_object_method(out_matrix, _jit_sym_getdata, &out_bp);
 
         jit_object_method(in_matrix, _jit_sym_getinfo, &in_minfo);
         jit_object_method(in_matrix, _jit_sym_getdata, &in_bp);
@@ -107,11 +108,11 @@ t_jit_err cv_jit_rj_findcontours_matrix_calc(t_cv_jit_rj_findcontours *x, void *
                 for (size_t k = 0; k < contours0.size(); k++)
                     approxPolyDP(Mat(contours0[k]), contours[k], x->epsilon, true);
 
-                dst.clear();
+                //dst.clear();
 
-                cv::Mat dst_mat = dst;
+                //cv::Mat dst_mat = dst;
 
-                drawContours(dst_mat, contours, x->level, Scalar(255), 1, LINE_AA, hierarchy, std::abs(x->level));
+                //drawContours(dst_mat, contours, x->level, Scalar(255), 1, LINE_AA, hierarchy, std::abs(x->level));
 
                 // END FIRST MATRIX OUT
 
@@ -134,16 +135,16 @@ t_jit_err cv_jit_rj_findcontours_matrix_calc(t_cv_jit_rj_findcontours *x, void *
                 }
 
                 // set output matrix informations
-                out2_minfo.dim[1] = 1;
-                out2_minfo.dim[0] = total;
-                out2_minfo.type = _jit_sym_float32;
-                out2_minfo.planecount = 3;
-                out2_minfo.flags = JIT_MATRIX_DATA_REFERENCE | JIT_MATRIX_DATA_PACK_TIGHT;
-                out2_minfo.size = out2_minfo.dim[0] * out2_minfo.planecount * sizeof(float);
+                out_minfo.dim[1] = 1;
+                out_minfo.dim[0] = total;
+                out_minfo.type = _jit_sym_float32;
+                out_minfo.planecount = 3;
+                out_minfo.flags = JIT_MATRIX_DATA_REFERENCE | JIT_MATRIX_DATA_PACK_TIGHT;
+                out_minfo.size = out_minfo.dim[0] * out_minfo.planecount * sizeof(float);
 
-                jit_object_method(out2_matrix, _jit_sym_setinfo_ex, &out2_minfo);
-                jit_object_method(out2_matrix, _jit_sym_data, array);
-                jit_object_method(out2_matrix, _jit_sym_getdata, &out2_bp);
+                jit_object_method(out_matrix, _jit_sym_setinfo_ex, &out_minfo);
+                jit_object_method(out_matrix, _jit_sym_data, array);
+                jit_object_method(out_matrix, _jit_sym_getdata, &out_bp);
             }
             catch (cv::Exception &exception) {
                 in_bp[0] = 99;
@@ -154,8 +155,8 @@ t_jit_err cv_jit_rj_findcontours_matrix_calc(t_cv_jit_rj_findcontours *x, void *
                 for (int i = 0; i < 32; i++) {
                     c74::max::object_post(in_matrix, "in_minfo.dimstride %d %d", i, in_minfo.dimstride[i]);
                 }
-                jit_object_method(out2_matrix, _jit_sym_setinfo_ex, &in_minfo);
-                jit_object_method(out2_matrix, _jit_sym_data, in_bp);
+                jit_object_method(out_matrix, _jit_sym_setinfo_ex, &in_minfo);
+                jit_object_method(out_matrix, _jit_sym_data, in_bp);
 
                 object_error((t_object *)x, "OpenCV error: %s", exception.what());
             }
@@ -175,7 +176,7 @@ t_cv_jit_rj_findcontours *cv_jit_rj_findcontours_new(void)
     if ((x=(t_cv_jit_rj_findcontours *)jit_object_alloc(_cv_jit_rj_findcontours_class)))
     {
         x->level = -2.f;
-        x->epsilon = 3.f;
+        x->epsilon = 0.f;
     }
     else
     {
