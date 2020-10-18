@@ -26,3 +26,10 @@ And thanks for helps, tests and suggestions to:
 
 ![Binary image](EXAMPLE_IMAGES/IMG_1.png)
 ![Extracted contours](EXAMPLE_IMAGES/IMG_1_PROCESSED.png)
+![Binary image](EXAMPLE_IMAGES/mani.jpg)
+![Extracted contours](EXAMPLE_IMAGES/mani_1.png)
+![Binary image](EXAMPLE_IMAGES/find.png)
+![Extracted contours](EXAMPLE_IMAGES/find_2.png)
+![Binary image](EXAMPLE_IMAGES/botticelli.jpg)
+![Extracted contours](EXAMPLE_IMAGES/botticelli_2.png)
+![Extracted contours](EXAMPLE_IMAGES/botticelli_3.png)
