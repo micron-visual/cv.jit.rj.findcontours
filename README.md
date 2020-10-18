@@ -30,6 +30,6 @@ And thanks for helps, tests and suggestions to:
 ![Extracted contours](EXAMPLE_IMAGES/mani_1.png)
 ![Binary image](EXAMPLE_IMAGES/find.png)
 ![Extracted contours](EXAMPLE_IMAGES/find_2.png)
-![Binary image](EXAMPLE_IMAGES/botticelli.jpg)
+![Binary image](EXAMPLE_IMAGES/botticelli_original.jpg)
 ![Extracted contours](EXAMPLE_IMAGES/botticelli_2.png)
 ![Extracted contours](EXAMPLE_IMAGES/botticelli_3.png)
