@@ -24,5 +24,5 @@ And thanks for helps, tests and suggestions to:
 * Alberto Barberis
 * Federico Nitti
 
-![Binary image](IMG_1.png)
-![Extracted contours](IMG_1_PROCESSED.png)
+![Binary image](EXAMPLE_IMAGES/IMG_1.png)
+![Extracted contours](EXAMPLE_IMAGES/IMG_1_PROCESSED.png)
